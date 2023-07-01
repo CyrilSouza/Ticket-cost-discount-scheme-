@@ -1,0 +1,67 @@
+import java.util.*;
+
+class Solution{
+    
+    public static void main(String[] args){
+       
+        Scanner sc=new Scanner(System.in);
+        
+        System.out.println("Enter the number of ticket");
+        int tickets=sc.nextInt();
+        if(tickets>=5 && tickets<=40){
+            System.out.println("Do you want referestments:");
+            String ref=sc.next();
+            System.out.println("Do you have a coupon code:");
+            String code=sc.next();
+            System.out.println("Enter the circle:");
+            String circle=sc.next();
+            
+            double cost=0;
+            switch(circle){
+                 case "k":{
+                    int value=75;
+                    cost=(tickets*value);
+                    if(tickets>20){
+                        cost=cost-(cost*.1);
+                    }
+                    if(code.equals('y')){
+                        cost=cost-(cost*.02);
+                        
+                    }
+                    if(ref.equals('y')){
+                        cost=cost+(50*tickets);
+                    }
+                    System.out.println("Ticket cost:"+String.format("%.2f",cost));
+                    break;
+                     
+                 }
+                 case "q":{
+                    int value=150;
+                    cost=(tickets*value);
+                    if(tickets>20){
+                        cost=cost-(cost*.1);
+                    }
+                    if(code.equals('y')){
+                        cost=cost-(cost*.02);
+                        
+                    }
+                    if(ref.equals('y')){
+                        cost=cost+(50*tickets);
+                    }
+                    System.out.println("Ticket cost:"+String.format("%.2f",cost));
+                    break;
+                     
+                }
+                default:
+                System.out.println("Invalid input");
+            }
+        }
+        else{
+            System.out.println("Minimum number of 5 and maximum  number of 40 tickets ");
+        }
+                
+        
+        
+        
+    }
+}
